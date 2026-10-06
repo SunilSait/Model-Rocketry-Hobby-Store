@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apex Rocketry — Premium model rocket kits, engines, and launch equipment. From beginner to expert, explore our curated collections and join the rocketry community.">
+    <title>Apex Rocketry | Model Rocket Kits & Hobby Store</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+    <script src="components.js" defer></script>
+</head>
+<body>
+    <div id="main-nav"></div>
+
+    <!-- ===== HERO SLIDER ===== -->
+    <section class="hero-section" id="hero-section">
+        <div class="hero-slides-track" id="hero-slides-track">
+            <!-- Slide 1 -->
+            <div class="hero-split-slide active">
+                <div class="hero-split-inner">
+                    <div class="hero-content">
+                        <span class="section-label">Explore Model Rocketry</span>
+                        <h1>Launch Your Passion Into the Sky</h1>
+                        <p>Discover precision-engineered rocket kits for every skill level. Build, customize, and launch your own rockets with our expert-curated collections and premium components.</p>
+                        <div class="hero-actions">
+                            <a href="products.html" class="btn btn-primary btn-lg">Shop Kits</a>
+                            <a href="guide.html" class="btn btn-outline btn-lg">Beginner's Guide</a>
+                        </div>
+                    </div>
+                    <div class="hero-image-wrapper">
+                        <img src="assets/images/hero-rocket-kit.jpg" alt="Professional model rocket kit components on workbench">
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="hero-split-slide">
+                <div class="hero-split-inner">
+                    <div class="hero-content">
+                        <span class="section-label">Community Events</span>
+                        <h1>Experience the Thrill of Launch Day</h1>
+                        <p>Join fellow hobbyists at our organized launch events. Watch your creations soar, share techniques, and compete in altitude challenges across skill categories.</p>
+                        <div class="hero-actions">
+                            <a href="events.html" class="btn btn-primary btn-lg">View Events</a>
+                            <a href="contact.html" class="btn btn-outline btn-lg">Get in Touch</a>
+                        </div>
+                    </div>
+                    <div class="hero-image-wrapper">
+                        <img src="assets/images/rocket-launch.jpg" alt="Model rocket launching into blue sky with smoke trail">
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="hero-split-slide">
+                <div class="hero-split-inner">
+                    <div class="hero-content">
+                        <span class="section-label">Start Your Journey</span>
+                        <h1>Everything You Need to Get Started</h1>
+                        <p>New to rocketry? Our beginner-friendly kits come with step-by-step guides, all necessary components, and expert support to ensure a successful first launch.</p>
+                        <div class="hero-actions">
+                            <a href="products.html" class="btn btn-primary btn-lg">Starter Kits</a>
+                            <a href="guide.html" class="btn btn-outline btn-lg">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="hero-image-wrapper">
+                        <img src="assets/images/beginner-kit.jpg" alt="Beginner model rocket kit components laid out on table">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Slider Controls -->
+        <div class="hero-controls">
+            <button class="hero-arrow" id="hero-prev" aria-label="Previous slide">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button class="hero-dot active" aria-label="Slide 1"></button>
+            <button class="hero-dot" aria-label="Slide 2"></button>
+            <button class="hero-dot" aria-label="Slide 3"></button>
+            <button class="hero-arrow" id="hero-next" aria-label="Next slide">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- ===== CATEGORY CARDS ===== -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-label">Shop by Skill Level</span>
+                <h2 class="section-title">Find Your Perfect Rocket Kit</h2>
+                <p class="section-desc">Whether you're building your first rocket or engineering complex multi-stage designs, we have kits matched to your experience level.</p>
+            </div>
+            <div class="category-grid">
+                <div class="category-card animate-on-scroll">
+                    <img src="assets/images/beginner-kit.jpg" alt="Beginner model rocket kit" class="category-card-img">
+                    <div class="category-card-body">
+                        <h3>Beginner Kits</h3>
+                        <p>Easy-to-assemble kits with pre-colored parts and simple construction. Perfect for ages 10+ and first-time builders.</p>
+                        <a href="products.html" class="btn btn-outline btn-sm">Explore Kits</a>
+                    </div>
+                </div>
+                <div class="category-card animate-on-scroll">
+                    <img src="assets/images/intermediate-rocket.jpg" alt="Intermediate model rocket on launch pad" class="category-card-img">
+                    <div class="category-card-body">
+                        <h3>Intermediate Kits</h3>
+                        <p>More detailed builds with custom painting, composite fins, and higher-thrust engines for experienced hobbyists.</p>
+                        <a href="products.html" class="btn btn-outline btn-sm">Explore Kits</a>
+                    </div>
+                </div>
+                <div class="category-card animate-on-scroll">
+                    <img src="assets/images/advanced-rocket.jpg" alt="Advanced multi-stage model rocket in workshop" class="category-card-img">
+                    <div class="category-card-body">
+                        <h3>Advanced & High Power</h3>
+                        <p>Complex multi-stage rockets, dual deployment systems, and high-power engines for certified rocketeers.</p>
+                        <a href="products.html" class="btn btn-outline btn-sm">Explore Kits</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT / SPLIT SECTION ===== -->
+    <section class="section" style="background:var(--bg-surface);">
+        <div class="container">
+            <div class="split-section animate-on-scroll">
+                <div class="split-image">
+                    <img src="assets/images/workshop-scene.jpg" alt="Model rocketry workshop with rockets and tools">
+                </div>
+                <div class="split-content">
+                    <span class="section-label">About Us</span>
+                    <h2>Fueling the Rocketry Community Since 2008</h2>
+                    <p>At Apex Rocketry, we believe that model rocketry is more than a hobby — it's a gateway to understanding aerospace engineering, physics, and the pure thrill of flight.</p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <span class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></span>
+                            <span>Expert-curated kits from top manufacturers</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></span>
+                            <span>Safety-certified engines and launch equipment</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></span>
+                            <span>Community events and mentorship programs</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></span>
+                            <span>Free technical support for all purchases</span>
+                        </div>
+                    </div>
+                    <a href="guide.html" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== STATS BAR ===== -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item animate-on-scroll">
+                    <h3><span data-count="15000" data-suffix="+">0</span></h3>
+                    <p>Rockets Launched</p>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <h3><span data-count="450" data-suffix="+">0</span></h3>
+                    <p>Rocket Kits Available</p>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <h3><span data-count="8200" data-suffix="+">0</span></h3>
+                    <p>Happy Hobbyists</p>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <h3><span data-count="120" data-suffix="+">0</span></h3>
+                    <p>Launch Events Hosted</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FEATURED PRODUCTS ===== -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-label">Featured Products</span>
+                <h2 class="section-title">Popular Rocket Kits</h2>
+                <p class="section-desc">Our best-selling kits chosen by the community. From first flights to competition rockets, here are this season's top picks.</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card animate-on-scroll" data-category="beginner">
+                    <div class="product-card-img">
+                        <img src="assets/images/product-alpha.jpg" alt="Alpha Scout rocket kit">
+                        <span class="product-badge">Best Seller</span>
+                    </div>
+                    <div class="product-card-body">
+                        <h4>Alpha Scout Kit</h4>
+                        <p class="product-meta">Beginner · A8-3 Engine · 30cm</p>
+                        <div class="product-price-row">
+                            <span class="product-price">$24.99</span>
+                            <a href="products.html" class="btn btn-primary btn-sm">View</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card animate-on-scroll" data-category="intermediate">
+                    <div class="product-card-img">
+                        <img src="assets/images/intermediate-rocket.jpg" alt="Vortex Striker rocket kit">
+                        <span class="product-badge">Popular</span>
+                    </div>
+                    <div class="product-card-body">
+                        <h4>Vortex Striker</h4>
+                        <p class="product-meta">Intermediate · C6-5 Engine · 48cm</p>
+                        <div class="product-price-row">
+                            <span class="product-price">$44.99</span>
+                            <a href="products.html" class="btn btn-primary btn-sm">View</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card animate-on-scroll" data-category="advanced">
+                    <div class="product-card-img">
+                        <img src="assets/images/advanced-rocket.jpg" alt="Titan X7 rocket kit">
+                        <span class="product-badge">Pro</span>
+                    </div>
+                    <div class="product-card-body">
+                        <h4>Titan X7 Multi-Stage</h4>
+                        <p class="product-meta">Advanced · D12-5 Engine · 76cm</p>
+                        <div class="product-price-row">
+                            <span class="product-price">$89.99</span>
+                            <a href="products.html" class="btn btn-primary btn-sm">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="section" style="background:var(--bg-surface);">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-label">How It Works</span>
+                <h2 class="section-title">From Box to Launchpad in 4 Steps</h2>
+                <p class="section-desc">Building and launching your first model rocket is easier than you think. Follow these simple steps.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card animate-on-scroll">
+                    <div class="step-number">1</div>
+                    <h3>Choose Your Kit</h3>
+                    <p>Browse our collection by skill level and find the perfect rocket kit for your experience.</p>
+                </div>
+                <div class="step-card animate-on-scroll">
+                    <div class="step-number">2</div>
+                    <h3>Build & Customize</h3>
+                    <p>Follow the included instructions to assemble your rocket. Add paint and decals for a personal touch.</p>
+                </div>
+                <div class="step-card animate-on-scroll">
+                    <div class="step-number">3</div>
+                    <h3>Load the Engine</h3>
+                    <p>Insert the appropriate motor, attach the igniter, and set up your launch pad in an open area.</p>
+                </div>
+                <div class="step-card animate-on-scroll">
+                    <div class="step-number">4</div>
+                    <h3>Launch & Recover</h3>
+                    <p>Countdown, press the button, and watch your rocket soar! The parachute ensures a safe landing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ENGINES SPLIT SECTION ===== -->
+    <section class="section">
+        <div class="container">
+            <div class="split-section reverse animate-on-scroll">
+                <div class="split-content">
+                    <span class="section-label">Engines & Motors</span>
+                    <h2>Power Your Flight with the Right Engine</h2>
+                    <p>Understanding engine classifications is key to a successful launch. We carry a full range from low-power A-class to high-power H-class motors, each rated for specific rocket weights and altitude goals.</p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <span class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+                            <span>A-C class for beginner and intermediate rockets</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+                            <span>D-G class for high-power applications</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+                            <span>Composite and black powder propellant options</span>
+                        </div>
+                    </div>
+                    <a href="products.html" class="btn btn-primary">Browse Engines</a>
+                </div>
+                <div class="split-image">
+                    <img src="assets/images/rocket-engines.jpg" alt="Model rocket engines of various sizes and classifications">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="section" style="background:var(--bg-surface);">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-label">Community Voices</span>
+                <h2 class="section-title">What Our Rocketeers Say</h2>
+                <p class="section-desc">Hear from fellow hobbyists who've launched their passion with Apex Rocketry kits and community events.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-stars">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <p class="testimonial-text">"My son and I built the Alpha Scout together. Watching it launch for the first time was a moment we'll never forget. Apex made it incredibly easy to get started."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MR</div>
+                        <div class="testimonial-info">
+                            <h4>Michael Rivera</h4>
+                            <p>First-time Rocketeer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-stars">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <p class="testimonial-text">"The Titan X7 multi-stage kit was an incredible engineering challenge. Apex's technical support helped me optimize my staging timing. Reached 1,200 feet!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SK</div>
+                        <div class="testimonial-info">
+                            <h4>Sarah Kim</h4>
+                            <p>Certified L2 Rocketeer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-stars">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <p class="testimonial-text">"The launch events are the best part. Meeting fellow hobbyists, comparing builds, and watching dozens of rockets fly — it's an incredible community experience."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">DJ</div>
+                        <div class="testimonial-info">
+                            <h4>David Johnson</h4>
+                            <p>Club Member, 5 Years</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-label">Questions & Answers</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-desc">Everything you need to know about model rocketry, our kits, and getting started.</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-trigger" onclick="toggleFAQ(this)">
+                        What age is appropriate to start model rocketry?
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer"><p>Model rocketry is suitable for ages 10 and up with adult supervision. Our beginner kits are designed specifically for young builders, with simple snap-together construction and low-power engines that are safe and easy to use.</p></div>
+                </div>
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-trigger" onclick="toggleFAQ(this)">
+                        Do I need certification to launch a model rocket?
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer"><p>Low-power rockets (A-D class engines) do not require certification. However, for high-power rockets (E class and above), you'll need certification through organizations like NAR or TRA. We can help guide you through the certification process.</p></div>
+                </div>
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-trigger" onclick="toggleFAQ(this)">
+                        Where can I safely launch my model rocket?
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer"><p>Model rockets should be launched in open fields away from buildings, trees, and power lines. Public parks (with permission), sports fields, and designated launch sites are ideal. Check local regulations and join our community events for organized, safe launches.</p></div>
+                </div>
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-trigger" onclick="toggleFAQ(this)">
+                        Can I reuse my rocket after launching?
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer"><p>Absolutely! Most model rockets are designed for multiple flights. The recovery system (parachute or streamer) brings the rocket safely back to the ground. Simply replace the engine, repack the recovery system, and you're ready for another launch.</p></div>
+                </div>
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-trigger" onclick="toggleFAQ(this)">
+                        Do you offer international shipping?
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer"><p>Yes, we ship to most countries worldwide. However, please note that rocket engines (motors) may have shipping restrictions to certain regions due to their classification. Contact us for specifics about your location.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA BANNER ===== -->
+    <section class="section">
+        <div class="container">
+            <div class="cta-banner animate-on-scroll">
+                <h2>Ready to Launch Your First Rocket?</h2>
+                <p>Join thousands of hobbyists who've discovered the thrill of model rocketry. Start with a beginner kit and reach for the sky.</p>
+                <div class="hero-actions">
+                    <a href="products.html" class="btn btn-primary btn-lg">Shop Starter Kits</a>
+                    <a href="events.html" class="btn btn-outline btn-lg" style="color:#fff;border-color:rgba(255,255,255,0.3);">Upcoming Events</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="main-footer"></div>
+</body>
+</html>

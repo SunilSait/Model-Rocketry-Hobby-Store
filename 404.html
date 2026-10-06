@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" id="root-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page not found. The page you're looking for doesn't exist or has launched into orbit.">
+    <title>404 — Page Not Found | Apex Rocketry</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="fullscreen-page">
+
+<!-- Top Bar -->
+<div style="display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;max-width:1200px;margin:0 auto;width:100%;">
+    <a href="index.html" class="nav-logo" aria-label="Apex Rocketry Home">
+        <img src="logo.svg" alt="Apex Rocketry Logo" width="38" height="38" style="width:38px;height:38px;object-fit:contain;display:block;" />
+        <div class="nav-logo-text">
+            <span class="brand-top">APEX</span>
+            <span class="brand-bottom">Rocketry</span>
+        </div>
+    </a>
+    <div style="display:flex;gap:0.5rem;">
+        <button onclick="toggleDir()" class="auth-toggle-btn" title="Toggle Direction">
+            <span class="dir-label" style="font-size:0.625rem;font-weight:600;">LTR</span>
+        </button>
+        <button onclick="toggleTheme()" class="auth-toggle-btn" title="Toggle Theme" aria-label="Toggle dark mode">
+            <span class="theme-icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+        </button>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="fullscreen-content">
+    <div style="position:relative;max-width:540px;width:100%;margin:0 auto;">
+        <div class="error-illustration">
+            <!-- Spinning orbital rocket backdrop -->
+            <svg class="orbit-spin" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="70" cy="70" r="58" stroke="#E8542E" stroke-width="2" stroke-dasharray="6 6" opacity="0.35"/>
+                <ellipse cx="70" cy="70" rx="66" ry="24" stroke="#FF8A65" stroke-width="1.5" transform="rotate(-30 70 70)" opacity="0.45"/>
+                <circle cx="118" cy="46" r="4.5" fill="#E8542E" opacity="0.8"/>
+                <circle cx="22" cy="94" r="3.5" fill="#FF8A65" opacity="0.7"/>
+                <path d="M70 14 L77 33 L70 29 L63 33 Z" fill="#E8542E" opacity="0.85"/>
+            </svg>
+            <div class="error-code">404</div>
+        </div>
+        <div class="error-subtitle">Houston, We Have a Problem</div>
+        <p class="error-desc">Looks like this rocket veered off its planned trajectory! The page you're searching for has been moved, deorbited, or never existed.</p>
+        <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
+            <a href="index.html" class="btn btn-primary btn-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                Back to Home
+            </a>
+            <a href="contact.html" class="btn btn-secondary btn-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Contact Support
+            </a>
+        </div>
+    </div>
+</div>
+
+<script src="components.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        initAuthPage();
+    });
+</script>
+</body>
+</html>

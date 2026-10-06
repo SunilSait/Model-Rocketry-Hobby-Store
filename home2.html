@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apex Rocketry Premium — Explore our cinematic collection of high-performance model rockets, advanced kits, and elite launch equipment.">
+    <title>Apex Rocketry | Premium Collection</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+    <script src="components.js" defer></script>
+</head>
+<body>
+    <div id="main-nav"></div>
+
+    <!-- ===== CINEMATIC HERO SLIDER ===== -->
+    <section class="hero-cinematic" id="hero-section">
+        <div class="hero-cinematic-track" id="hero-slides-track">
+
+            <!-- Slide 1: Premium Collection -->
+            <div class="hero-slide active">
+                <div class="hero-cinematic-bg">
+                    <img src="assets/images/hero-premium.jpg" alt="Premium rocket collection showcase">
+                    <div class="hero-cinematic-overlay"></div>
+                </div>
+                <div class="hero-cinematic-content">
+                    <span class="section-label">Premium Collection</span>
+                    <h1>Where Engineering Meets Artistry</h1>
+                    <p>Explore our curated selection of high-performance model rockets, precision components, and professional-grade launch systems designed for the discerning rocketeer.</p>
+                    <div class="hero-actions">
+                        <a href="products.html" class="btn btn-primary btn-lg">Explore Collection</a>
+                        <a href="guide.html" class="btn btn-outline btn-lg" style="color:#fff;border-color:rgba(255,255,255,0.35);">Build Guide</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: High-Altitude Performance -->
+            <div class="hero-slide">
+                <div class="hero-cinematic-bg">
+                    <img src="assets/images/rocket-launch.jpg" alt="High altitude model rocket launch soaring into the sky">
+                    <div class="hero-cinematic-overlay"></div>
+                </div>
+                <div class="hero-cinematic-content">
+                    <span class="section-label">High-Altitude Flights</span>
+                    <h1>Reach 10,000+ Feet With Certified Motors</h1>
+                    <p>Push the boundary of amateur rocketry with composite solid propellants, dual-deploy recovery parachutes, and live GPS telemetry flight avionics.</p>
+                    <div class="hero-actions">
+                        <a href="events.html" class="btn btn-primary btn-lg">Launch Events</a>
+                        <a href="products.html" class="btn btn-outline btn-lg" style="color:#fff;border-color:rgba(255,255,255,0.35);">Flight Telemetry</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Aerospace Craftsmanship -->
+            <div class="hero-slide">
+                <div class="hero-cinematic-bg">
+                    <img src="assets/images/workshop-scene.jpg" alt="Rocket craftsmanship workbench and precision kits">
+                    <div class="hero-cinematic-overlay"></div>
+                </div>
+                <div class="hero-cinematic-content">
+                    <span class="section-label">Aerospace Grade Kits</span>
+                    <h1>Precision Engineered For Every Launch</h1>
+                    <p>Laser-cut airframes, CNC-machined aluminum retention, and wind-tunnel tested fin geometry built for record-setting apogees and flawless recovery.</p>
+                    <div class="hero-actions">
+                        <a href="products.html" class="btn btn-primary btn-lg">Shop Advanced Kits</a>
+                        <a href="pricing.html" class="btn btn-outline btn-lg" style="color:#fff;border-color:rgba(255,255,255,0.35);">Club Membership</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Slider Controls -->
+        <div class="hero-cinematic-controls hero-controls">
+            <button class="hero-arrow" id="hero-prev" aria-label="Previous slide">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button class="hero-dot active" aria-label="Slide 1"></button>
+            <button class="hero-dot" aria-label="Slide 2"></button>
+            <button class="hero-dot" aria-label="Slide 3"></button>
+            <button class="hero-arrow" id="hero-next" aria-label="Next slide">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- ===== FEATURE BOXES ===== -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-label">Why Apex Rocketry</span>
+                <h2 class="section-title">The Premium Rocketry Experience</h2>
+                <p class="section-desc">Everything you need for the ultimate model rocketry journey, from precision kits to expert-led community events.</p>
+            </div>
+            <div class="feature-box-grid">
+                <div class="feature-box animate-on-scroll">
+                    <div class="feature-box-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h4>Safety Certified</h4>
+                    <p>Every kit and engine meets NAR and TRA safety standards for worry-free building and launching.</p>
+                </div>
+                <div class="feature-box animate-on-scroll">
+                    <div class="feature-box-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                    </div>
+                    <h4>Precision Engineered</h4>
+                    <p>Laser-cut fins, CNC-machined nose cones, and aerodynamically optimized body tube designs.</p>
+                </div>
+                <div class="feature-box animate-on-scroll">
+                    <div class="feature-box-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h4>Expert Community</h4>
+                    <p>Access mentors, join build sessions, and attend monthly launch events.</p>
+                </div>
+                <div class="feature-box animate-on-scroll">
+                    <div class="feature-box-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                    </div>
+                    <h4>Competition Ready</h4>
+                    <p>Kits designed for altitude competitions, payload challenges, and scale model accuracy events.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GALLERY SECTION ===== -->
+    <section class="section" style="background:var(--bg-surface);">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-label">Gallery</span>
+                <h2 class="section-title">Rocketry in Action</h2>
+                <p class="section-desc">Stunning captures from launches, workshops, and community events that showcase the art and science of model rocketry.</p>
+            </div>
+            <div class="gallery-row animate-on-scroll">
+                <div class="gallery-item">
+                    <img src="assets/images/rocket-launch.jpg" alt="Rocket launch action shot">
+                    <div class="gallery-item-overlay">Launch Day Excitement</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/workshop-scene.jpg" alt="Workshop building session">
+                    <div class="gallery-item-overlay">Workshop Sessions</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/parachute-recovery.jpg" alt="Parachute recovery at sunset">
+                    <div class="gallery-item-overlay">Recovery Systems</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/launch-event.jpg" alt="Community launch event">
+                    <div class="gallery-item-overlay">Community Events</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PREMIUM SPLIT — LAUNCH PAD ===== -->
+    <section class="section">
+        <div class="container">
+            <div class="split-section animate-on-scroll">
+                <div class="split-image">
+                    <img src="assets/images/launch-pad-setup.jpg" alt="Professional launch pad setup with controller">
+                </div>
+                <div class="split-content">
+                    <span class="section-label">Launch Equipment</span>
+                    <h2>Professional-Grade Launch Systems</h2>
+                    <p>Our launch pads and controllers are built to the same standards used in competitive rocketry events. From single-pad setups for backyard launches to multi-pad configurations for club events.</p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <span class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></span>
+                            <span>Adjustable angle steel launch pads</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></span>
+                            <span>Electronic launch controllers with safety keys</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></span>
+                            <span>Blast deflectors and ground anchors included</span>
+                        </div>
+                    </div>
+                    <a href="products.html" class="btn btn-primary">Shop Launch Gear</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RECOVERY SPLIT (REVERSE) ===== -->
+    <section class="section" style="background:var(--bg-surface);">
+        <div class="container">
+            <div class="split-section reverse animate-on-scroll">
+                <div class="split-content">
+                    <span class="section-label">Recovery Systems</span>
+                    <h2>Safe Return Every Flight</h2>
+                    <p>Every rocket needs a reliable way home. Our recovery systems range from simple streamer kits to dual-deployment parachute configurations for high-altitude flights.</p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <span class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></span>
+                            <span>Nylon parachutes from 12" to 48" diameter</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></span>
+                            <span>Electronic altimeters for dual deployment</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></span>
+                            <span>Kevlar shock cords and nomex protectors</span>
+                        </div>
+                    </div>
+                    <a href="products.html" class="btn btn-primary">Browse Recovery Gear</a>
+                </div>
+                <div class="split-image">
+                    <img src="assets/images/parachute-recovery.jpg" alt="Model rocket descending with parachute at sunset">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== STATS BAR ===== -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item animate-on-scroll">
+                    <h3><span data-count="2500" data-suffix=" ft">0</span></h3>
+                    <p>Max Altitude Achieved</p>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <h3><span data-count="98" data-suffix="%">0</span></h3>
+                    <p>Recovery Success Rate</p>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <h3><span data-count="50" data-suffix="+">0</span></h3>
+                    <p>Engine Types Available</p>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <h3><span data-count="24" data-suffix="/7">0</span></h3>
+                    <p>Expert Tech Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FEATURED PRODUCTS PREMIUM ===== -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-label">Premium Selection</span>
+                <h2 class="section-title">Editor's Choice Kits</h2>
+                <p class="section-desc">Hand-picked by our team of expert rocketeers — these are the kits that deliver exceptional performance and build satisfaction.</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card animate-on-scroll">
+                    <div class="product-card-img">
+                        <img src="assets/images/intermediate-rocket.jpg" alt="Vortex Striker rocket">
+                        <span class="product-badge">Editor's Pick</span>
+                    </div>
+                    <div class="product-card-body">
+                        <h4>Vortex Striker Pro</h4>
+                        <p class="product-meta">Intermediate · C6-7 Engine · 52cm</p>
+                        <div class="product-price-row">
+                            <span class="product-price">$54.99</span>
+                            <a href="products.html" class="btn btn-primary btn-sm">View</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card animate-on-scroll">
+                    <div class="product-card-img">
+                        <img src="assets/images/advanced-rocket.jpg" alt="Titan X7 rocket">
+                        <span class="product-badge">Top Rated</span>
+                    </div>
+                    <div class="product-card-body">
+                        <h4>Titan X7 Elite</h4>
+                        <p class="product-meta">Advanced · E12-6 Engine · 82cm</p>
+                        <div class="product-price-row">
+                            <span class="product-price">$129.99</span>
+                            <a href="products.html" class="btn btn-primary btn-sm">View</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card animate-on-scroll">
+                    <div class="product-card-img">
+                        <img src="assets/images/rocket-collection.jpg" alt="Collection starter pack">
+                        <span class="product-badge">Value Pack</span>
+                    </div>
+                    <div class="product-card-body">
+                        <h4>Multi-Kit Starter Pack</h4>
+                        <p class="product-meta">3 Kits · Mixed Engines · All Levels</p>
+                        <div class="product-price-row">
+                            <span class="product-price">$149.99</span>
+                            <a href="products.html" class="btn btn-primary btn-sm">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ICON LIST — VALUES ===== -->
+    <section class="section" style="background:var(--bg-surface);">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-label">Our Commitment</span>
+                <h2 class="section-title">What Sets Us Apart</h2>
+                <p class="section-desc">At Apex Rocketry, we go beyond selling kits. We're building a community of passionate rocketeers who push boundaries and inspire the next generation.</p>
+            </div>
+            <div class="icon-list">
+                <div class="icon-list-item animate-on-scroll">
+                    <div class="icon-list-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                    </div>
+                    <h4>Educational Resources</h4>
+                    <p>Free build guides, video tutorials, and STEM curriculum materials for schools and homeschoolers.</p>
+                </div>
+                <div class="icon-list-item animate-on-scroll">
+                    <div class="icon-list-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    </div>
+                    <h4>Innovation First</h4>
+                    <p>We continuously source the latest composite materials and propulsion technologies for our product line.</p>
+                </div>
+                <div class="icon-list-item animate-on-scroll">
+                    <div class="icon-list-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+                    </div>
+                    <h4>Nationwide Events</h4>
+                    <p>Monthly launch events across 12 states, regional competitions, and our annual RocketFest showcase.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-label">Customer Stories</span>
+                <h2 class="section-title">Trusted by Thousands of Rocketeers</h2>
+                <p class="section-desc">Real stories from hobbyists who've taken their passion to new heights with Apex Rocketry.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-stars">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <p class="testimonial-text">"As a physics teacher, I use Apex kits in my classroom to teach aerodynamics and Newton's laws. The students are completely engaged and the kits."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">LP</div>
+                        <div class="testimonial-info">
+                            <h4>Lisa Patterson</h4>
+                            <p>STEM Educator</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-stars">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <p class="testimonial-text">"Won first place at the regional altitude competition with my Apex-built rocket reaching 1,800 feet. The quality of components is unmatched."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">RN</div>
+                        <div class="testimonial-info">
+                            <h4>Robert Nguyen</h4>
+                            <p>Competition Rocketeer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-stars">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <p class="testimonial-text">"The launch events organized by Apex are incredible. Great venue, knowledgeable mentors, and the whole family enjoys the day. We attend every month now!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">AW</div>
+                        <div class="testimonial-info">
+                            <h4>Amy Whitfield</h4>
+                            <p>Family Hobbyist</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA BANNER ===== -->
+    <section class="section" style="background:var(--bg-surface);">
+        <div class="container">
+            <div class="cta-banner animate-on-scroll">
+                <h2>Join the Apex Rocketry Community</h2>
+                <p>Get exclusive access to new kit releases, member-only launch events, and expert build support when you join our community.</p>
+                <div class="hero-actions">
+                    <a href="signup.html" class="btn btn-primary btn-lg">Sign Up Free</a>
+                    <a href="events.html" class="btn btn-outline btn-lg" style="color:#fff;border-color:rgba(255,255,255,0.3);">View Events</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="main-footer"></div>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse Apex Rocketry's complete catalog of model rocket kits, engines, and accessories organized by skill level and engine size.">
+    <title>Products | Apex Rocketry</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+    <script src="components.js" defer></script>
+</head>
+<body>
+    <div id="main-nav"></div>
+
+    <!-- ===== PAGE HERO ===== -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="section-label">Product Catalog</span>
+            <h1>Rocket Kits & Equipment</h1>
+            <p>Explore our complete range of model rocket kits, engines, launch equipment, and accessories — organized by skill level and engine classification.</p>
+        </div>
+    </section>
+
+    <!-- ===== FILTER & PRODUCTS ===== -->
+    <section class="section">
+        <div class="container">
+            <!-- Filter Tabs -->
+            <div class="filter-bar">
+                <button class="filter-tab active" onclick="filterProducts('all', this)">All Products</button>
+                <button class="filter-tab" onclick="filterProducts('beginner', this)">Beginner</button>
+                <button class="filter-tab" onclick="filterProducts('intermediate', this)">Intermediate</button>
+                <button class="filter-tab" onclick="filterProducts('advanced', this)">Advanced</button>
+                <button class="filter-tab" onclick="filterProducts('engines', this)">Engines</button>
+                <button class="filter-tab" onclick="filterProducts('accessories', this)">Accessories</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid">
+                <!-- Beginner -->
+                <div class="product-card animate-on-scroll" data-category="beginner">
+                    <div class="product-card-img">
+                        <img src="assets/images/product-alpha.jpg" alt="Alpha Scout rocket kit">
+                        <span class="product-badge">Best Seller</span>
+                    </div>
+                    <div class="product-card-body">
+                        <h4>Alpha Scout</h4>
+                        <p class="product-meta">Beginner · A8-3 Engine · 30cm height</p>
+                        <div class="product-price-row">
+                            <span class="product-price">$24.99</span>
+                            <a href="#" class="btn btn-primary btn-sm">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card animate-on-scroll" data-category="beginner">
+                    <div class="product-card-img">
+                        <img src="assets/images/beginner-kit.jpg" alt="Sky Dart starter kit">
+                    </div>
+                    <div class="product-card-body">
+                        <h4>Sky Dart Starter</h4>
+                        <p class="product-meta">Beginner · B6-4 Engine · 35cm height</p>
+                        <div class="product-price-row">
+                            <span class="product-price">$29.99</span>
+                            <a href="#" class="btn btn-primary btn-sm">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card animate-on-scroll" data-category="beginner">
+                    <div class="product-card-img">
+                        <img src="assets/images/rocket-collection.jpg" alt="Comet Chaser kit">
+                        <span class="product-badge">New</span>
+                    </div>
+                    <div class="product-card-body">
+                        <h4>Comet Chaser</h4>
+                        <p class="product-meta">Beginner · A8-3 Engine · 28cm height</p>
+                        <div class="product-price-row">
+                            <span class="product-price">$19.99</span>
+                            <a href="#" class="btn btn-primary btn-sm">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Intermediate -->
+                <div class="product-card animate-on-scroll" data-category="intermediate">
+                    <div class="product-card-img">
+                        <img src="assets/images/intermediate-rocket.jpg" alt="Vortex Striker rocket">
+                        <span class="product-badge">Popular</span>
+                    </div>
+                    <div class="product-card-body">
+                        <h4>Vortex Striker</h4>
+                        <p class="product-meta">Intermediate · C6-5 Engine · 48cm height</p>
+                        <div class="product-price-row">
+                            <span class="product-price">$44.99</span>
+                            <a href="#" class="btn btn-primary btn-sm">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card animate-on-scroll" data-category="intermediate">
+                    <div class="product-card-img">
+                        <img src="assets/images/launch-pad-setup.jpg" alt="Storm Rider rocket">
+                    </div>
+                    <div class="product-card-body">
+                        <h4>Storm Rider</h4>
+                        <p class="product-meta">Intermediate · C6-7 Engine · 52cm height</p>
+                        <div class="product-price-row">
+                            <span class="product-price">$49.99</span>
+                            <a href="#" class="btn btn-primary btn-sm">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card animate-on-scroll" data-category="intermediate">
+                    <div class="product-card-img">
+                        <img src="assets/images/parachute-recovery.jpg" alt="Nebula Falcon rocket">
+                        <span class="product-badge">Top Rated</span>
+                    </div>
+                    <div class="product-card-body">
+                        <h4>Nebula Falcon</h4>
+                        <p class="product-meta">Intermediate · D12-5 Engine · 56cm height</p>
+                        <div class="product-price-row">
+                            <span class="product-price">$54.99</span>
+                            <a href="#" class="btn btn-primary btn-sm">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced -->
+                <div class="product-card animate-on-scroll" data-category="advanced">
+                    <div class="product-card-img">
+                        <img src="assets/images/advanced-rocket.jpg" alt="Titan X7 multi-stage rocket">
+                        <span class="product-badge">Pro</span>
+                    </div>
+                    <div class="product-card-body">
+                        <h4>Titan X7 Multi-Stage</h4>
+                        <p class="product-meta">Advanced · D12-5 / C6-0 Engines · 76cm</p>
+                        <div class="product-price-row">
+                            <span class="product-price">$89.99</span>
+                            <a href="#" class="btn btn-primary btn-sm">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card animate-on-scroll" data-category="advanced">
+                    <div class="product-card-img">
+                        <img src="assets/images/hero-premium.jpg" alt="Apex Pinnacle high power rocket">
+                        <span class="product-badge">High Power</span>
+                    </div>
+                    <div class="product-card-body">
+                        <h4>Apex Pinnacle HP</h4>
+                        <p class="product-meta">Advanced · E12-6 Engine · 92cm height</p>
+                        <div class="product-price-row">
+                            <span class="product-price">$129.99</span>
+                            <a href="#" class="btn btn-primary btn-sm">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card animate-on-scroll" data-category="advanced">
+                    <div class="product-card-img">
+                        <img src="assets/images/hero-rocket-kit.jpg" alt="Competition series rocket">
+                    </div>
+                    <div class="product-card-body">
+                        <h4>Competition Series X</h4>
+                        <p class="product-meta">Advanced · F15-8 Engine · 105cm height</p>
+                        <div class="product-price-row">
+                            <span class="product-price">$179.99</span>
+                            <a href="#" class="btn btn-primary btn-sm">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Engines -->
+                <div class="product-card animate-on-scroll" data-category="engines">
+                    <div class="product-card-img">
+                        <img src="assets/images/rocket-engines.jpg" alt="A-class engine pack">
+                    </div>
+                    <div class="product-card-body">
+                        <h4>A8-3 Engine Pack (3)</h4>
+                        <p class="product-meta">Low Power · 2.5N-sec · Beginner</p>
+                        <div class="product-price-row">
+                            <span class="product-price">$8.99</span>
+                            <a href="#" class="btn btn-primary btn-sm">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card animate-on-scroll" data-category="engines">
+                    <div class="product-card-img">
+                        <img src="assets/images/launch-pad-setup.jpg" alt="C-class engine pack">
+                    </div>
+                    <div class="product-card-body">
+                        <h4>C6-5 Engine Pack (3)</h4>
+                        <p class="product-meta">Mid Power · 10N-sec · Intermediate</p>
+                        <div class="product-price-row">
+                            <span class="product-price">$12.99</span>
+                            <a href="#" class="btn btn-primary btn-sm">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card animate-on-scroll" data-category="engines">
+                    <div class="product-card-img">
+                        <img src="assets/images/workshop-scene.jpg" alt="D-class engine pack">
+                    </div>
+                    <div class="product-card-body">
+                        <h4>D12-5 Engine Pack (2)</h4>
+                        <p class="product-meta">High Power · 20N-sec · Advanced</p>
+                        <div class="product-price-row">
+                            <span class="product-price">$14.99</span>
+                            <a href="#" class="btn btn-primary btn-sm">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accessories -->
+                <div class="product-card animate-on-scroll" data-category="accessories">
+                    <div class="product-card-img">
+                        <img src="assets/images/launch-pad-setup.jpg" alt="Launch pad and controller set">
+                    </div>
+                    <div class="product-card-body">
+                        <h4>Pro Launch Pad Set</h4>
+                        <p class="product-meta">Steel Pad · Electronic Controller · Blast Plate</p>
+                        <div class="product-price-row">
+                            <span class="product-price">$39.99</span>
+                            <a href="#" class="btn btn-primary btn-sm">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card animate-on-scroll" data-category="accessories">
+                    <div class="product-card-img">
+                        <img src="assets/images/parachute-recovery.jpg" alt="Recovery system kit">
+                    </div>
+                    <div class="product-card-body">
+                        <h4>Recovery Chute Kit (24")</h4>
+                        <p class="product-meta">Nylon · Kevlar Cord · Nomex Protector</p>
+                        <div class="product-price-row">
+                            <span class="product-price">$12.99</span>
+                            <a href="#" class="btn btn-primary btn-sm">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card animate-on-scroll" data-category="accessories">
+                    <div class="product-card-img">
+                        <img src="assets/images/workshop-scene.jpg" alt="Finishing supplies kit">
+                    </div>
+                    <div class="product-card-body">
+                        <h4>Finishing Supplies Kit</h4>
+                        <p class="product-meta">Paint · Brushes · Sanding Paper · Decals</p>
+                        <div class="product-price-row">
+                            <span class="product-price">$16.99</span>
+                            <a href="#" class="btn btn-primary btn-sm">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="section" style="background:var(--bg-surface);">
+        <div class="container">
+            <div class="cta-banner animate-on-scroll">
+                <h2>Can't Find What You Need?</h2>
+                <p>Our experts can help you find the perfect kit for your skill level and goals. Contact us for personalized recommendations.</p>
+                <div class="hero-actions">
+                    <a href="contact.html" class="btn btn-primary btn-lg">Contact Us</a>
+                    <a href="guide.html" class="btn btn-outline btn-lg" style="color:#fff;border-color:rgba(255,255,255,0.3);">Beginner's Guide</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="main-footer"></div>
+</body>
+</html>
