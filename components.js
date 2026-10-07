@@ -364,20 +364,178 @@ function animateCounters() {
     counters.forEach(el => observer.observe(el));
 }
 
-/* ─── PRODUCT FILTER ─────────────────────────────────────── */
-function filterProducts(category, btn) {
-    const cards = document.querySelectorAll('.product-card[data-category]');
-    const tabs = document.querySelectorAll('.filter-tab');
-    tabs.forEach(t => t.classList.remove('active'));
-    if (btn) btn.classList.add('active');
+/* ─── SEPARATE SECTION 1: FILTER BY SKILL LEVEL ─────────────────── */
+let activeSkillFilter = 'all';
+let activeSkillSearch = '';
+
+function filterSkillProducts(skill, btn) {
+    activeSkillFilter = skill || 'all';
+    const grid = document.getElementById('skill-products-grid');
+    if (!grid) return;
+
+    const cards = grid.querySelectorAll('.product-card');
+    const tabs = document.querySelectorAll('#skill-filter-bar .filter-tab');
+    tabs.forEach(t => {
+        const val = t.getAttribute('data-value') || '';
+        t.classList.toggle('active', t === btn || val === activeSkillFilter);
+    });
+
+    let visibleCount = 0;
     cards.forEach(card => {
-        if (category === 'all' || card.getAttribute('data-category') === category) {
+        const cardSkill = card.getAttribute('data-skill') || '';
+        const cardText = (card.textContent || '').toLowerCase();
+        const matchesSkill = (activeSkillFilter === 'all') || (cardSkill === activeSkillFilter);
+        const matchesSearch = !activeSkillSearch || cardText.includes(activeSkillSearch);
+
+        if (matchesSkill && matchesSearch) {
             card.style.display = '';
+            visibleCount++;
         } else {
             card.style.display = 'none';
         }
     });
+
+    const badge = document.getElementById('skill-count-badge');
+    if (badge) {
+        badge.innerHTML = `<span class="count-number">${visibleCount}</span> Rocket Kits`;
+    }
+
+    const empty = document.getElementById('skill-empty-state');
+    if (empty) {
+        empty.style.display = visibleCount === 0 ? 'flex' : 'none';
+    }
 }
+
+function handleSkillSearch(query) {
+    activeSkillSearch = (query || '').trim().toLowerCase();
+    const clearBtn = document.getElementById('skill-search-clear');
+    if (clearBtn) clearBtn.style.display = activeSkillSearch ? 'flex' : 'none';
+    filterSkillProducts(activeSkillFilter);
+}
+
+function clearSkillSearch() {
+    const input = document.getElementById('skill-search-input');
+    if (input) input.value = '';
+    activeSkillSearch = '';
+    const clearBtn = document.getElementById('skill-search-clear');
+    if (clearBtn) clearBtn.style.display = 'none';
+    filterSkillProducts(activeSkillFilter);
+}
+
+function resetSkillFilters() {
+    activeSkillSearch = '';
+    const input = document.getElementById('skill-search-input');
+    if (input) input.value = '';
+    const clearBtn = document.getElementById('skill-search-clear');
+    if (clearBtn) clearBtn.style.display = 'none';
+    filterSkillProducts('all');
+}
+
+/* ─── SEPARATE SECTION 2: FILTER BY ENGINE SIZE ─────────────────── */
+let activeEngineFilter = 'all';
+let activeEngineSearch = '';
+
+function filterEngineProducts(engineSize, btn) {
+    activeEngineFilter = engineSize || 'all';
+    const grid = document.getElementById('engine-products-grid');
+    if (!grid) return;
+
+    const cards = grid.querySelectorAll('.product-card');
+    const tabs = document.querySelectorAll('#engine-filter-bar .filter-tab');
+    tabs.forEach(t => {
+        const val = t.getAttribute('data-value') || '';
+        t.classList.toggle('active', t === btn || val === activeEngineFilter);
+    });
+
+    let visibleCount = 0;
+    cards.forEach(card => {
+        const cardEngine = card.getAttribute('data-engine') || '';
+        const cardText = (card.textContent || '').toLowerCase();
+        const matchesEngine = (activeEngineFilter === 'all') || (cardEngine === activeEngineFilter);
+        const matchesSearch = !activeEngineSearch || cardText.includes(activeEngineSearch);
+
+        if (matchesEngine && matchesSearch) {
+            card.style.display = '';
+            visibleCount++;
+        } else {
+            card.style.display = 'none';
+        }
+    });
+
+    const badge = document.getElementById('engine-count-badge');
+    if (badge) {
+        badge.innerHTML = `<span class="count-number">${visibleCount}</span> Motors & Kits`;
+    }
+
+    const empty = document.getElementById('engine-empty-state');
+    if (empty) {
+        empty.style.display = visibleCount === 0 ? 'flex' : 'none';
+    }
+}
+
+function handleEngineSearch(query) {
+    activeEngineSearch = (query || '').trim().toLowerCase();
+    const clearBtn = document.getElementById('engine-search-clear');
+    if (clearBtn) clearBtn.style.display = activeEngineSearch ? 'flex' : 'none';
+    filterEngineProducts(activeEngineFilter);
+}
+
+function clearEngineSearch() {
+    const input = document.getElementById('engine-search-input');
+    if (input) input.value = '';
+    activeEngineSearch = '';
+    const clearBtn = document.getElementById('engine-search-clear');
+    if (clearBtn) clearBtn.style.display = 'none';
+    filterEngineProducts(activeEngineFilter);
+}
+
+function resetEngineFilters() {
+    activeEngineSearch = '';
+    const input = document.getElementById('engine-search-input');
+    if (input) input.value = '';
+    const clearBtn = document.getElementById('engine-search-clear');
+    if (clearBtn) clearBtn.style.display = 'none';
+    filterEngineProducts('all');
+}
+
+/* ─── QUICK NAVIGATION JUMP HELPERS ────────────────────────────── */
+function jumpToSkillLevel(skill) {
+    filterSkillProducts(skill);
+    const target = document.getElementById('section-skill-level');
+    if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+
+function jumpToEngineSize(engineSize) {
+    filterEngineProducts(engineSize);
+    const target = document.getElementById('section-engine-size');
+    if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+
+function filterProducts(category, btn) {
+    if (['all', 'beginner', 'intermediate', 'advanced'].includes(category)) {
+        filterSkillProducts(category, btn);
+    } else if (['13mm', '18mm', '24mm', '29mm'].includes(category)) {
+        filterEngineProducts(category, btn);
+    }
+}
+
+function initProductFiltersFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    const skillParam = params.get('skill');
+    const engineParam = params.get('engine');
+
+    if (skillParam && ['beginner', 'intermediate', 'advanced'].includes(skillParam)) {
+        jumpToSkillLevel(skillParam);
+    }
+    if (engineParam && ['13mm', '18mm', '24mm', '29mm'].includes(engineParam)) {
+        jumpToEngineSize(engineParam);
+    }
+}
+
 
 /* ─── HERO SLIDER ────────────────────────────────────────── */
 function initHeroSlider() {
@@ -933,4 +1091,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initHeroSlider();
     initHeroCosmicCanvas();
     initTestimonialSlider();
+    initProductFiltersFromURL();
 });
+
