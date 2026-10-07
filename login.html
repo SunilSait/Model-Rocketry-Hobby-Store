@@ -12,7 +12,7 @@
 
 <!-- Top Bar -->
 <div class="auth-topbar">
-    <div style="display:flex;gap:0.5rem;">
+    <div class="auth-topbar-actions" style="display:flex;gap:0.5rem;">
         <button onclick="toggleDir()" class="auth-toggle-btn" title="Toggle Direction">
             <span class="dir-label" style="font-size:0.625rem;font-weight:600;">LTR</span>
         </button>
@@ -26,11 +26,22 @@
 <main style="flex:1;display:flex;align-items:center;justify-content:center;padding:1rem;">
     <div class="auth-card">
         <!-- Decorative orb -->
-        <div style="position:absolute;top:-60px;right:-60px;width:140px;height:140px;background:rgba(232,84,46,0.08);border-radius:50%;filter:blur(30px);pointer-events:none;"></div>
+        <div style="position:absolute;top:-60px;right:-60px;width:140px;height:140px;background:rgba(21,94,239,0.08);border-radius:50%;filter:blur(30px);pointer-events:none;"></div>
 
         <!-- Logo -->
         <a href="index.html" class="auth-logo" aria-label="Apex Rocketry Home">
-            <img src="logo.svg" alt="Apex Rocketry Logo" width="48" height="48" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="46" height="46" class="nav-logo-svg" style="width:46px;height:46px;display:block;flex-shrink:0;">
+                <path d="M 6 34 C 11 34 18 30 25 21 C 28.5 15.5 31.5 9.5 33 5" fill="none" stroke="#155EEF" stroke-width="2" stroke-linecap="round"/>
+                <polygon points="33.5,3 36,7.5 31.5,6.5" fill="#155EEF"/>
+                <g transform="translate(19, 19) rotate(34) translate(-19, -19)">
+                    <path d="M 19 6 C 17.5 11 16.5 15 16.5 23 L 19 23 Z" class="logo-mark-graphite" fill="currentColor"/>
+                    <path d="M 19 6 C 20.5 11 21.5 15 21.5 23 L 19 23 Z" fill="#155EEF"/>
+                    <polygon points="16.5,18 11.5,24.5 14.5,24.5 16.5,22.5" class="logo-mark-graphite" fill="currentColor"/>
+                    <polygon points="21.5,18 26.5,24.5 23.5,24.5 21.5,22.5" fill="#155EEF"/>
+                    <polygon points="17.5,23.5 17,26 21,26 20.5,23.5" class="logo-mark-graphite" fill="currentColor"/>
+                    <rect x="18" y="14" width="2" height="1.5" rx="0.5" fill="#FFFFFF"/>
+                </g>
+            </svg>
             <div class="auth-logo-text">
                 <span class="brand-top">APEX</span>
                 <span class="brand-bottom">Rocketry</span>

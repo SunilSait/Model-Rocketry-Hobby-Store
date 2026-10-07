@@ -70,7 +70,18 @@ function toggleDir() {
 
 /* ─── SVG LOGO ─────────────────────────────────────────── */
 function getLogoSVG(size = 38) {
-    return `<img src="logo.svg" alt="Apex Rocketry Logo" width="${size}" height="${size}" class="nav-logo-img" style="width:${size}px;height:${size}px;object-fit:contain;display:block;flex-shrink:0;" />`;
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="${size}" height="${size}" class="nav-logo-svg" style="width:${size}px;height:${size}px;display:block;flex-shrink:0;">
+        <path d="M 6 34 C 11 34 18 30 25 21 C 28.5 15.5 31.5 9.5 33 5" fill="none" stroke="#155EEF" stroke-width="2" stroke-linecap="round"/>
+        <polygon points="33.5,3 36,7.5 31.5,6.5" fill="#155EEF"/>
+        <g transform="translate(19, 19) rotate(34) translate(-19, -19)">
+            <path d="M 19 6 C 17.5 11 16.5 15 16.5 23 L 19 23 Z" class="logo-mark-graphite" fill="currentColor"/>
+            <path d="M 19 6 C 20.5 11 21.5 15 21.5 23 L 19 23 Z" fill="#155EEF"/>
+            <polygon points="16.5,18 11.5,24.5 14.5,24.5 16.5,22.5" class="logo-mark-graphite" fill="currentColor"/>
+            <polygon points="21.5,18 26.5,24.5 23.5,24.5 21.5,22.5" fill="#155EEF"/>
+            <polygon points="17.5,23.5 17,26 21,26 20.5,23.5" class="logo-mark-graphite" fill="currentColor"/>
+            <rect x="18" y="14" width="2" height="1.5" rx="0.5" fill="#FFFFFF"/>
+        </g>
+    </svg>`;
 }
 
 /* ─── NAVBAR ─────────────────────────────────────────── */
@@ -419,6 +430,176 @@ function initHeroSlider() {
     startTimer();
 }
 
+/* ─── TESTIMONIAL SLIDER (3 SLIDES • 5S AUTO-CYCLE) ─────── */
+function initTestimonialSlider() {
+    const wrapper = document.getElementById('testimonials-slider-wrapper');
+    if (!wrapper) return;
+
+    const slides = wrapper.querySelectorAll('.testimonial-slide');
+    const dots = wrapper.querySelectorAll('.testimonial-dot');
+    const prevBtn = document.getElementById('testimonial-prev');
+    const nextBtn = document.getElementById('testimonial-next');
+    const progressBar = document.getElementById('testimonial-progress-fill');
+    const counterEl = document.getElementById('testimonial-counter');
+
+    if (!slides.length) return;
+
+    let current = 0;
+    let timer = null;
+    let isHovered = false;
+    const interval = 5000; // 5 seconds per slide
+
+    function resetProgressBar() {
+        if (!progressBar) return;
+        progressBar.style.transition = 'none';
+        progressBar.style.width = '0%';
+        void progressBar.offsetWidth; // force DOM reflow
+        progressBar.style.transition = `width ${interval}ms linear`;
+        progressBar.style.width = '100%';
+    }
+
+    function pauseProgressBar() {
+        if (!progressBar) return;
+        const computedStyle = window.getComputedStyle(progressBar);
+        const currentWidth = computedStyle.getPropertyValue('width');
+        progressBar.style.transition = 'none';
+        progressBar.style.width = currentWidth;
+    }
+
+    function goToSlide(index) {
+        if (index < 0) index = slides.length - 1;
+        if (index >= slides.length) index = 0;
+        current = index;
+
+        slides.forEach((s, idx) => {
+            const isActive = idx === current;
+            s.classList.toggle('active', isActive);
+            s.setAttribute('aria-hidden', !isActive);
+        });
+
+        dots.forEach((d, idx) => {
+            const isActive = idx === current;
+            d.classList.toggle('active', isActive);
+            d.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+
+        if (counterEl) {
+            const numStr = String(current + 1).padStart(2, '0');
+            const totalStr = String(slides.length).padStart(2, '0');
+            counterEl.textContent = `TESTIMONIAL ${numStr} / ${totalStr}`;
+        }
+
+        if (!isHovered && !document.hidden) {
+            resetProgressBar();
+        }
+    }
+
+    function next() {
+        goToSlide(current + 1);
+    }
+
+    function prev() {
+        goToSlide(current - 1);
+    }
+
+    function startTimer() {
+        stopTimer();
+        if (isHovered || document.hidden) return;
+        resetProgressBar();
+        timer = setInterval(next, interval);
+    }
+
+    function stopTimer() {
+        if (timer) {
+            clearInterval(timer);
+            timer = null;
+        }
+        pauseProgressBar();
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            next();
+            startTimer();
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            prev();
+            startTimer();
+        });
+    }
+
+    dots.forEach((dot, idx) => {
+        dot.addEventListener('click', function(e) {
+            e.preventDefault();
+            goToSlide(idx);
+            startTimer();
+        });
+    });
+
+    // Pause on hover
+    wrapper.addEventListener('mouseenter', function() {
+        isHovered = true;
+        stopTimer();
+    });
+
+    wrapper.addEventListener('mouseleave', function() {
+        isHovered = false;
+        startTimer();
+    });
+
+    // Touch swipe support
+    let touchStartX = 0;
+    wrapper.addEventListener('touchstart', function(e) {
+        if (e.changedTouches && e.changedTouches[0]) {
+            touchStartX = e.changedTouches[0].screenX;
+        }
+    }, { passive: true });
+
+    wrapper.addEventListener('touchend', function(e) {
+        if (!e.changedTouches || !e.changedTouches[0]) return;
+        const touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        if (diff > 45) {
+            next();
+            startTimer();
+        } else if (diff < -45) {
+            prev();
+            startTimer();
+        }
+    }, { passive: true });
+
+    // Page visibility listener
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            stopTimer();
+        } else {
+            startTimer();
+        }
+    });
+
+    // IntersectionObserver to pause when off-screen
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+            if (entry.isIntersecting) {
+                startTimer();
+            } else {
+                stopTimer();
+            }
+        }, { threshold: 0.15 });
+        observer.observe(wrapper);
+    }
+
+    // Initialize slide 0 and countdown timer
+    goToSlide(0);
+    startTimer();
+}
+
 /* ─── NAVBAR SCROLL LISTENER ────────────────────────────── */
 window.addEventListener('scroll', function() {
     const nav = document.getElementById('navbar');
@@ -428,6 +609,321 @@ window.addEventListener('scroll', function() {
     }
 }, { passive: true });
 
+/* ─── HERO AEROSPACE COSMIC CANVAS ANIMATION (REROLLED) ─── */
+function initHeroCosmicCanvas() {
+    const canvas = document.getElementById('hero-space-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    const hero = document.getElementById('hero-section');
+
+    let width = 0;
+    let height = 0;
+    let dpr = window.devicePixelRatio || 1;
+    let animationId = null;
+    let isVisible = true;
+
+    function resize() {
+        if (!hero) return;
+        const rect = hero.getBoundingClientRect();
+        width = rect.width;
+        height = rect.height;
+        dpr = window.devicePixelRatio || 1;
+        canvas.width = Math.floor(width * dpr);
+        canvas.height = Math.floor(height * dpr);
+        canvas.style.width = width + 'px';
+        canvas.style.height = height + 'px';
+        ctx.scale(dpr, dpr);
+    }
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
+
+    // Interactive mouse tracking
+    let mouse = { x: -9999, y: -9999, active: false };
+    if (hero) {
+        hero.addEventListener('mousemove', (e) => {
+            const rect = hero.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+            mouse.active = true;
+        }, { passive: true });
+        hero.addEventListener('mouseleave', () => {
+            mouse.active = false;
+            mouse.x = -9999;
+            mouse.y = -9999;
+        }, { passive: true });
+
+        // Click to launch an interactive celebration rocket
+        hero.addEventListener('click', (e) => {
+            // Only trigger if not clicking buttons or interactive links
+            if (e.target.closest('a, button, .hero-controls')) return;
+            const rect = hero.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            launchRocket(clickX);
+        });
+    }
+
+    // Depth-sorted particles (3 tiers: distant stars, rising sparks, foreground embers)
+    const particles = [];
+    const count = Math.min(65, Math.max(30, Math.floor(window.innerWidth / 22)));
+
+    for (let i = 0; i < count; i++) {
+        const layer = Math.random() < 0.45 ? 0 : (Math.random() < 0.8 ? 1 : 2);
+        particles.push({
+            layer: layer, // 0: distant star, 1: rising spark, 2: foreground ember
+            x: Math.random() * (width || 1200),
+            y: Math.random() * (height || 600),
+            radius: layer === 0 ? 0.7 + Math.random() * 0.7 : (layer === 1 ? 1.3 + Math.random() * 0.8 : 2.0 + Math.random() * 1.2),
+            vx: (Math.random() - 0.5) * (layer === 0 ? 0.15 : 0.4),
+            vy: layer === 0 ? -0.05 - Math.random() * 0.1 : (layer === 1 ? -0.3 - Math.random() * 0.45 : -0.7 - Math.random() * 0.6),
+            baseAlpha: layer === 0 ? 0.3 + Math.random() * 0.5 : (layer === 1 ? 0.4 + Math.random() * 0.5 : 0.6 + Math.random() * 0.4),
+            alpha: 0.5,
+            pulse: Math.random() * Math.PI * 2,
+            pulseSpeed: 0.02 + Math.random() * 0.03,
+            colorType: layer === 2 && Math.random() < 0.3 ? 'amber' : (Math.random() < 0.6 ? 'blue' : 'cyan')
+        });
+    }
+
+    // Miniature Rockets & Smoke Puffs
+    const rockets = [];
+    const smokePuffs = [];
+    let lastAutoLaunch = Date.now();
+
+    function launchRocket(targetX) {
+        const startX = targetX !== undefined ? targetX + (Math.random() - 0.5) * 80 : 80 + Math.random() * (width - 160);
+        const startY = height + 30;
+        const targetAngle = -Math.PI / 2 + (Math.random() - 0.5) * 0.35; // mostly vertical with subtle tilt
+        const speed = 4.5 + Math.random() * 2.5;
+
+        rockets.push({
+            x: startX,
+            y: startY,
+            vx: Math.cos(targetAngle) * speed,
+            vy: Math.sin(targetAngle) * speed,
+            angle: targetAngle + Math.PI / 2, // rotation for drawing rocket
+            size: 14 + Math.random() * 6,
+            trailTimer: 0
+        });
+    }
+
+    function render() {
+        if (!isVisible) return;
+        ctx.clearRect(0, 0, width, height);
+
+        const isDark = document.documentElement.classList.contains('dark');
+
+        // Draw soft ambient hover glow
+        if (mouse.active && mouse.x > 0 && mouse.y > 0) {
+            const grad = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 160);
+            grad.addColorStop(0, isDark ? 'rgba(21, 94, 239, 0.16)' : 'rgba(21, 94, 239, 0.07)');
+            grad.addColorStop(1, 'rgba(21, 94, 239, 0)');
+            ctx.fillStyle = grad;
+            ctx.beginPath();
+            ctx.arc(mouse.x, mouse.y, 160, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        // Render Depth-Sorted Particles
+        for (let i = 0; i < particles.length; i++) {
+            const p = particles[i];
+
+            p.x += p.vx;
+            p.y += p.vy;
+            p.pulse += p.pulseSpeed;
+
+            // Gentle interaction with cursor
+            if (mouse.active) {
+                const dx = p.x - mouse.x;
+                const dy = p.y - mouse.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 100 && dist > 0) {
+                    const force = (100 - dist) / 100;
+                    p.x += (dx / dist) * force * 1.8;
+                    p.y += (dy / dist) * force * 1.8;
+                }
+            }
+
+            // Wrap vertical float
+            if (p.y < -15) {
+                p.y = height + 15;
+                p.x = Math.random() * width;
+            }
+            if (p.x < -15) p.x = width + 15;
+            if (p.x > width + 15) p.x = -15;
+
+            // Calculate opacity with gentle twinkle
+            const twinkle = 0.75 + 0.25 * Math.sin(p.pulse);
+            const currentAlpha = Math.min(1, Math.max(0.1, p.baseAlpha * twinkle));
+
+            let colorStr;
+            if (p.colorType === 'amber') {
+                colorStr = `rgba(245, 158, 11, ${currentAlpha})`;
+            } else if (p.colorType === 'cyan') {
+                colorStr = `rgba(56, 189, 248, ${currentAlpha})`;
+            } else {
+                colorStr = isDark ? `rgba(147, 197, 253, ${currentAlpha})` : `rgba(21, 94, 239, ${currentAlpha * 0.7})`;
+            }
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+            ctx.fillStyle = colorStr;
+
+            // Soft glow for larger sparks
+            if (p.layer >= 1) {
+                ctx.shadowBlur = p.layer === 2 ? 8 : 4;
+                ctx.shadowColor = colorStr;
+            }
+            ctx.fill();
+            ctx.shadowBlur = 0;
+        }
+
+        // Automatic Rocket Launch Schedule (every 6-8 seconds)
+        const now = Date.now();
+        if (now - lastAutoLaunch > 6500) {
+            launchRocket();
+            lastAutoLaunch = now + Math.random() * 2000;
+        }
+
+        // Update & Render Smoke Puffs
+        for (let i = smokePuffs.length - 1; i >= 0; i--) {
+            const sp = smokePuffs[i];
+            sp.x += sp.vx;
+            sp.y += sp.vy;
+            sp.radius += sp.growSpeed;
+            sp.alpha -= sp.decay;
+
+            if (sp.alpha <= 0) {
+                smokePuffs.splice(i, 1);
+                continue;
+            }
+
+            ctx.beginPath();
+            ctx.arc(sp.x, sp.y, sp.radius, 0, Math.PI * 2);
+            const puffAlpha = isDark ? sp.alpha * 0.25 : sp.alpha * 0.15;
+            ctx.fillStyle = `rgba(180, 205, 235, ${puffAlpha})`;
+            ctx.fill();
+        }
+
+        // Update & Render Ascending Miniature Rockets
+        for (let i = rockets.length - 1; i >= 0; i--) {
+            const r = rockets[i];
+            r.x += r.vx;
+            r.y += r.vy;
+
+            // Spawn smoke & flame puff behind engine
+            r.trailTimer++;
+            if (r.trailTimer % 2 === 0) {
+                smokePuffs.push({
+                    x: r.x + (Math.random() - 0.5) * 3,
+                    y: r.y + 10,
+                    vx: (Math.random() - 0.5) * 0.4,
+                    vy: 0.6 + Math.random() * 0.6,
+                    radius: 2.5 + Math.random() * 2,
+                    growSpeed: 0.15,
+                    alpha: 0.7,
+                    decay: 0.02
+                });
+            }
+
+            // Remove rocket if off screen
+            if (r.y < -50 || r.x < -50 || r.x > width + 50) {
+                rockets.splice(i, 1);
+                continue;
+            }
+
+            // Draw miniature model rocket
+            ctx.save();
+            ctx.translate(r.x, r.y);
+            ctx.rotate(r.angle);
+
+            // Exhaust plume flame
+            const flameLen = 8 + Math.random() * 6;
+            ctx.beginPath();
+            ctx.moveTo(-2.5, 6);
+            ctx.lineTo(2.5, 6);
+            ctx.lineTo(0, 6 + flameLen);
+            ctx.closePath();
+            ctx.fillStyle = '#F59E0B';
+            ctx.shadowBlur = 10;
+            ctx.shadowColor = '#F59E0B';
+            ctx.fill();
+
+            // Inner blue flame core
+            ctx.beginPath();
+            ctx.moveTo(-1.2, 6);
+            ctx.lineTo(1.2, 6);
+            ctx.lineTo(0, 6 + flameLen * 0.5);
+            ctx.closePath();
+            ctx.fillStyle = '#60A5FA';
+            ctx.fill();
+            ctx.shadowBlur = 0;
+
+            // Rocket Body Tube
+            ctx.fillStyle = isDark ? '#FFFFFF' : '#1E293B';
+            ctx.fillRect(-2, -6, 4, 12);
+
+            // Nose Cone
+            ctx.beginPath();
+            ctx.moveTo(-2, -6);
+            ctx.lineTo(2, -6);
+            ctx.lineTo(0, -11);
+            ctx.closePath();
+            ctx.fillStyle = '#155EEF'; // Aerospace Blue nose cone
+            ctx.fill();
+
+            // Fins
+            ctx.beginPath();
+            ctx.moveTo(-2, 2);
+            ctx.lineTo(-5, 6);
+            ctx.lineTo(-2, 6);
+            ctx.closePath();
+            ctx.fillStyle = '#155EEF';
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.moveTo(2, 2);
+            ctx.lineTo(5, 6);
+            ctx.lineTo(2, 6);
+            ctx.closePath();
+            ctx.fillStyle = '#155EEF';
+            ctx.fill();
+
+            ctx.restore();
+        }
+
+        animationId = requestAnimationFrame(render);
+    }
+
+    // IntersectionObserver to pause when offscreen
+    if ('IntersectionObserver' in window && hero) {
+        const observer = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+            if (entry.isIntersecting) {
+                if (!isVisible) {
+                    isVisible = true;
+                    animationId = requestAnimationFrame(render);
+                }
+            } else {
+                isVisible = false;
+                if (animationId) cancelAnimationFrame(animationId);
+            }
+        }, { threshold: 0.05 });
+        observer.observe(hero);
+    }
+
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            isVisible = false;
+            if (animationId) cancelAnimationFrame(animationId);
+        } else {
+            isVisible = true;
+            animationId = requestAnimationFrame(render);
+        }
+    });
+
+    animationId = requestAnimationFrame(render);
+}
+
 /* ─── INIT ON DOM READY ─────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', function() {
     injectNav();
@@ -435,4 +931,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     animateCounters();
     initHeroSlider();
+    initHeroCosmicCanvas();
+    initTestimonialSlider();
 });

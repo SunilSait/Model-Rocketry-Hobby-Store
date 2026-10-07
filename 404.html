@@ -13,7 +13,18 @@
 <!-- Top Bar -->
 <div style="display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;max-width:1200px;margin:0 auto;width:100%;">
     <a href="index.html" class="nav-logo" aria-label="Apex Rocketry Home">
-        <img src="logo.svg" alt="Apex Rocketry Logo" width="38" height="38" style="width:38px;height:38px;object-fit:contain;display:block;" />
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="38" height="38" class="nav-logo-svg" style="width:38px;height:38px;display:block;flex-shrink:0;">
+            <path d="M 6 34 C 11 34 18 30 25 21 C 28.5 15.5 31.5 9.5 33 5" fill="none" stroke="#155EEF" stroke-width="2" stroke-linecap="round"/>
+            <polygon points="33.5,3 36,7.5 31.5,6.5" fill="#155EEF"/>
+            <g transform="translate(19, 19) rotate(34) translate(-19, -19)">
+                <path d="M 19 6 C 17.5 11 16.5 15 16.5 23 L 19 23 Z" class="logo-mark-graphite" fill="currentColor"/>
+                <path d="M 19 6 C 20.5 11 21.5 15 21.5 23 L 19 23 Z" fill="#155EEF"/>
+                <polygon points="16.5,18 11.5,24.5 14.5,24.5 16.5,22.5" class="logo-mark-graphite" fill="currentColor"/>
+                <polygon points="21.5,18 26.5,24.5 23.5,24.5 21.5,22.5" fill="#155EEF"/>
+                <polygon points="17.5,23.5 17,26 21,26 20.5,23.5" class="logo-mark-graphite" fill="currentColor"/>
+                <rect x="18" y="14" width="2" height="1.5" rx="0.5" fill="#FFFFFF"/>
+            </g>
+        </svg>
         <div class="nav-logo-text">
             <span class="brand-top">APEX</span>
             <span class="brand-bottom">Rocketry</span>
@@ -35,11 +46,11 @@
         <div class="error-illustration">
             <!-- Spinning orbital rocket backdrop -->
             <svg class="orbit-spin" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="70" cy="70" r="58" stroke="#E8542E" stroke-width="2" stroke-dasharray="6 6" opacity="0.35"/>
-                <ellipse cx="70" cy="70" rx="66" ry="24" stroke="#FF8A65" stroke-width="1.5" transform="rotate(-30 70 70)" opacity="0.45"/>
-                <circle cx="118" cy="46" r="4.5" fill="#E8542E" opacity="0.8"/>
-                <circle cx="22" cy="94" r="3.5" fill="#FF8A65" opacity="0.7"/>
-                <path d="M70 14 L77 33 L70 29 L63 33 Z" fill="#E8542E" opacity="0.85"/>
+                <circle cx="70" cy="70" r="58" stroke="#155EEF" stroke-width="1.5" stroke-dasharray="6 6" opacity="0.4"/>
+                <ellipse cx="70" cy="70" rx="66" ry="24" stroke="#155EEF" stroke-width="1.5" transform="rotate(-30 70 70)" opacity="0.3"/>
+                <circle cx="118" cy="46" r="4" fill="#155EEF" opacity="0.9"/>
+                <circle cx="22" cy="94" r="3" fill="#242424" opacity="0.7"/>
+                <path d="M70 14 L77 33 L70 29 L63 33 Z" fill="#155EEF" opacity="0.9"/>
             </svg>
             <div class="error-code">404</div>
         </div>

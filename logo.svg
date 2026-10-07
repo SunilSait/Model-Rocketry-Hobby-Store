@@ -1,9 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-  <circle cx="20" cy="20" r="19" fill="#0C1B2E" stroke="#E8542E" stroke-width="2"/>
-  <path d="M20 6 L23 18 L20 32 L17 18 Z" fill="#E8542E"/>
-  <path d="M14 24 L17 18 L20 32 Z" fill="#B8432A" opacity="0.8"/>
-  <path d="M26 24 L23 18 L20 32 Z" fill="#B8432A" opacity="0.8"/>
-  <circle cx="20" cy="14" r="2.5" fill="#F0F4F8"/>
-  <path d="M17 30 L20 35 L23 30" fill="#E8542E" opacity="0.6"/>
-  <path d="M18.5 31 L20 34 L21.5 31" fill="#FFB74D" opacity="0.7"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" fill="none">
+  <style>
+    .mark-primary { fill: #155EEF; stroke: #155EEF; }
+    .mark-dark { fill: #242424; stroke: #242424; }
+    .mark-line { stroke: #155EEF; }
+  </style>
+  <!-- Geometric trajectory arc -->
+  <path d="M 6 34 C 11 34 18 30 25 21 C 28.5 15.5 31.5 9.5 33 5" fill="none" class="mark-line" stroke-width="2" stroke-linecap="round"/>
+  <!-- Trajectory apogee vector tick -->
+  <polygon points="33.5,3 36,7.5 31.5,6.5" class="mark-primary"/>
+
+  <!-- Minimal geometric rocket silhouette aligned with upward ascent vector -->
+  <g transform="translate(19, 19) rotate(34) translate(-19, -19)">
+    <!-- Fuselage left facet -->
+    <path d="M 19 6 C 17.5 11 16.5 15 16.5 23 L 19 23 Z" class="mark-dark"/>
+    <!-- Fuselage right facet -->
+    <path d="M 19 6 C 20.5 11 21.5 15 21.5 23 L 19 23 Z" class="mark-primary"/>
+    
+    <!-- Left aerodynamic delta fin -->
+    <polygon points="16.5,18 11.5,24.5 14.5,24.5 16.5,22.5" class="mark-dark"/>
+    <!-- Right aerodynamic delta fin -->
+    <polygon points="21.5,18 26.5,24.5 23.5,24.5 21.5,22.5" class="mark-primary"/>
+    
+    <!-- Propulsion nozzle -->
+    <polygon points="17.5,23.5 17,26 21,26 20.5,23.5" class="mark-dark"/>
+
+    <!-- Avionics telemetry band -->
+    <rect x="18" y="14" width="2" height="1.5" rx="0.5" fill="#FFFFFF"/>
+  </g>
 </svg>
