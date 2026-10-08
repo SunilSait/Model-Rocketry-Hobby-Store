@@ -202,6 +202,20 @@ document.addEventListener('click', function(e) {
     if (iconEl) iconEl.innerHTML = ICONS.menu;
 });
 
+// Close mobile menu on desktop resize
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 1024) {
+        const menu = document.getElementById('mobile-menu');
+        const backdrop = document.getElementById('mobile-backdrop');
+        const iconEl = document.querySelector('.mobile-menu-icon');
+        if (menu && menu.classList.contains('open')) {
+            menu.classList.remove('open');
+            if (backdrop) backdrop.classList.remove('open');
+            if (iconEl) iconEl.innerHTML = ICONS.menu;
+        }
+    }
+});
+
 /* ─── FOOTER ─────────────────────────────────────────── */
 function injectFooter() {
     const el = document.getElementById('main-footer');
