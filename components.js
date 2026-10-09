@@ -69,7 +69,7 @@ function toggleDir() {
 }
 
 /* ─── SVG LOGO ─────────────────────────────────────────── */
-function getLogoSVG(size = 38) {
+function getLogoSVG(size = 46) {
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="${size}" height="${size}" class="nav-logo-svg" style="width:${size}px;height:${size}px;display:block;flex-shrink:0;">
         <path d="M 6 34 C 11 34 18 30 25 21 C 28.5 15.5 31.5 9.5 33 5" fill="none" stroke="#155EEF" stroke-width="2" stroke-linecap="round"/>
         <polygon points="33.5,3 36,7.5 31.5,6.5" fill="#155EEF"/>
@@ -117,7 +117,7 @@ function injectNav() {
         <div class="nav-inner">
             <!-- Logo -->
             <a href="index.html" class="nav-logo" aria-label="Apex Rocketry Home">
-                ${getLogoSVG(40)}
+                ${getLogoSVG(46)}
                 <div class="nav-logo-text">
                     <span class="brand-top">APEX</span>
                     <span class="brand-bottom">Rocketry</span>
@@ -227,9 +227,9 @@ function injectFooter() {
                 <!-- Column 1: Brand & Socials -->
                 <div class="footer-brand">
                     <a href="index.html" class="nav-logo footer-logo" aria-label="Apex Rocketry Home">
-                        ${getLogoSVG(40)}
+                        ${getLogoSVG(52)}
                         <div class="nav-logo-text">
-                            <span class="brand-top" style="color:#fff;">APEX</span>
+                            <span class="brand-top">APEX</span>
                             <span class="brand-bottom">Rocketry</span>
                         </div>
                     </a>
